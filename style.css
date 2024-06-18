@@ -102,18 +102,20 @@ body {
     }
 
     .portfolio:hover .dropdown_content {
-        display: block;
+        display: flex;
+        align-items: center;
     }
 
     .dropdown_content {
         display: none;
         position: absolute;
-        bottom: -23px;
+        bottom: -40px;
         background-color: #f9f9f9;
         border-radius: 0 0 5px 5px;
         width: 130px;
+        height: 40px;
         justify-content: center;
-        z-index: 2;
+        z-index: 1;
     }
 
     .dropdown_content a {
