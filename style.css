@@ -13,19 +13,18 @@ body {
 .container {
     display: flex;
     flex-direction: column;
+    background-image: linear-gradient(#b3b3b3, transparent);
     width: 100%;
     max-width: 1440px;
     text-align: justify;
 
     .nav {
         display: flex;
-        flex-direction: row;
-        background-image: linear-gradient(grey, transparent);
-
+        flex-direction: column;
+        margin: 20px 50px;
     }
 
     .nav_text {
-        margin: 50px;
         color: white;
     }
 
@@ -46,18 +45,47 @@ body {
 
     span {
         font-family: "Source Code Pro", "Times New Roman", serif;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 500;
+        font-style: italic;
     }
 
     .portfolio {
         display: block;
         position: relative;
+        width: 130px;
+    }
+
+    .portfolio_btn {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .click_me {
+        position: absolute;
+        bottom: -35px;
+    }
+
+    .click_me p {
+        position: absolute;
+        margin: 0;
+        width: 100px;
+        color: black;
+        font-family: "LXGW WenKai Mono TC", "Times New Roman", serif;
+        font-size: 16px;
+        bottom: -16px;
+
+    }
+
+    .portfolio_btn img {
+        width: 30px;
+        height: 30px;
     }
 
     .portfolio_btn button {
-        width: 100px;
-        height: 30px;
+        width: 100%;
+        height: 40px;
         background-color: #44E34E;
         border-radius: 5px;
         border: none;
@@ -66,6 +94,11 @@ body {
 
     .portfolio_btn button:hover {
         background-color: rgba(68, 227, 79, 0.5);
+        border-radius: 5px 5px 0 0;
+
+        .click_me {
+            display: none;
+        }
     }
 
     .portfolio:hover .dropdown_content {
@@ -75,13 +108,17 @@ body {
     .dropdown_content {
         display: none;
         position: absolute;
+        bottom: -23px;
         background-color: #f9f9f9;
-        width: 100px;
+        border-radius: 0 0 5px 5px;
+        width: 130px;
         justify-content: center;
-        z-index: 1;
+        z-index: 2;
     }
 
     .dropdown_content a {
+        display: flex;
+        justify-content: center;
         text-decoration: none;
         color: black;
     }
@@ -123,7 +160,6 @@ body {
     .contacts .social {
         display: flex;
         justify-content: center;
-
     }
 
     .contacts img {
@@ -139,22 +175,35 @@ body {
 Media query with style rules for good looking on other devices
  */
 @media screen and (max-width: 800px) {
-    /*.container {*/
-    /*    flex-direction: column-reverse;*/
-    /*    align-items: center;*/
+    .container {
+        align-items: center;
 
-    /*    .logo {*/
-    /*        display: flex;*/
-    /*        justify-content: center;*/
-    /*        width: 50%;*/
+        .nav_text {
+            text-align: center;
+        }
 
-    /*        img {*/
-    /*            width: 80%;*/
-    /*        }*/
-    /*    }*/
+        .portfolio {
+            align-self: center;
+        }
 
-    /*    .text {*/
-    /*        margin: 0;*/
-    /*    }*/
-    /*}*/
+        section {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        .logo {
+            margin: 30px 5px;
+        }
+
+        .text {
+            width: unset;
+            margin: 0 20px;
+            text-align: center;
+        }
+
+        .contacts {
+            flex-direction: column;
+            margin: 0;
+        }
+    }
 }
